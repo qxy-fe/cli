@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+*.local
+*.log*
+dist
+
+# dist
+lib/
+
+# Test coverage
+coverage/
+
+# Typescript build info
+*.tsbuildinfo
