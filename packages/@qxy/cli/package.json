@@ -1,0 +1,39 @@
+{
+  "name": "@qxy/cli",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "keywords": [
+    "qxy",
+    "cli"
+  ],
+  "author": {
+    "name": "ntnyq",
+    "email": "ntnyq13@gmail.com"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/cli.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "qxy": "bin/qxy.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@qxy/cli-shared": "0.0.0",
+    "@qxy/cli-utils": "0.0.0",
+    "cac": "^6.7.2",
+    "chokidar": "^3.5.1",
+    "envinfo": "^7.7.4",
+    "esbuild": "^0.11.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -5,7 +5,7 @@
 ## Usage
 
 ```sh
-$ yarn global add @qxy/cli
+$ yarn global add @qxy
 
 $ qxy
 ```

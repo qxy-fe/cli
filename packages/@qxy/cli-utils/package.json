@@ -1,0 +1,33 @@
+{
+  "name": "@qxy/cli-utils",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": {
+    "name": "ntnyq",
+    "email": "ntnyq13@gmail.com"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@qxy/cli-shared": "0.0.0",
+    "@types/debug": "^4.1.5",
+    "@types/fs-extra": "^9.0.9",
+    "chalk": "^4.1.0",
+    "debug": "^4.3.1",
+    "fs-extra": "^9.1.0",
+    "ora": "^5.4.0",
+    "upath": "^2.0.1"
+  }
+}

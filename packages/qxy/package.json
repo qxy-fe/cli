@@ -1,0 +1,27 @@
+{
+  "name": "qxy",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": {
+    "name": "ntnyq",
+    "email": "ntnyq13@gmail.com"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/cli.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "qxy": "bin/qxy.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@qxy/cli": "0.0.0"
+  }
+}

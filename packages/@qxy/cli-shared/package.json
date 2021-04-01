@@ -1,0 +1,23 @@
+{
+  "name": "@qxy/cli-shared",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": {
+    "name": "ntnyq",
+    "email": "ntnyq13@gmail.com"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

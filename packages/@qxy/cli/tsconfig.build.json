@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "module": "CommonJS",
     "rootDir": "./src",
@@ -10,10 +10,10 @@
   ],
   "references": [
     {
-      "path": "../shared/tsconfig.build.json"
+      "path": "../cli-shared/tsconfig.build.json"
     },
     {
-      "path": "../utils/tsconfig.build.json"
+      "path": "../cli-utils/tsconfig.build.json"
     }
   ]
 }
