@@ -1,6 +1,6 @@
 {
   "name": "@qxy/cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "keywords": [
     "qxy",
@@ -26,8 +26,8 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@qxy/cli-shared": "0.0.0",
-    "@qxy/cli-utils": "0.0.0",
+    "@qxy/cli-shared": "0.0.1",
+    "@qxy/cli-utils": "0.0.1",
     "cac": "^6.7.2",
     "chokidar": "^3.5.1",
     "envinfo": "^7.7.4",

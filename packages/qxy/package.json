@@ -1,6 +1,6 @@
 {
   "name": "qxy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": {
     "name": "ntnyq",
@@ -22,6 +22,6 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@qxy/cli": "0.0.0"
+    "@qxy/cli": "0.0.1"
   }
 }
