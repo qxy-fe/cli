@@ -6,12 +6,12 @@
     "qxy",
     "cli"
   ],
+  "homepage": "",
+  "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
-  "homepage": "",
-  "license": "MIT",
   "main": "lib/cli.js",
   "types": "lib/index.d.ts",
   "bin": {
@@ -29,9 +29,9 @@
     "@qxy/cli-shared": "0.0.1",
     "@qxy/cli-utils": "0.0.1",
     "cac": "^6.7.3",
-    "chokidar": "^3.5.1",
+    "chokidar": "^3.5.2",
     "envinfo": "^7.8.1",
-    "esbuild": "^0.11.18"
+    "esbuild": "^0.12.15"
   },
   "publishConfig": {
     "access": "public"

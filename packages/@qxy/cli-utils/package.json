@@ -2,12 +2,12 @@
   "name": "@qxy/cli-utils",
   "version": "0.0.1",
   "description": "> TODO: description",
+  "homepage": "",
+  "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
-  "homepage": "",
-  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -17,17 +17,17 @@
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@qxy/cli-shared": "0.0.1",
-    "@types/debug": "^4.1.5",
-    "@types/fs-extra": "^9.0.11",
+    "@types/debug": "^4.1.6",
+    "@types/fs-extra": "^9.0.12",
     "chalk": "^4.1.1",
-    "debug": "^4.3.1",
+    "debug": "^4.3.2",
     "fs-extra": "^10.0.0",
-    "ora": "^5.4.0",
+    "ora": "^5.4.1",
     "upath": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
