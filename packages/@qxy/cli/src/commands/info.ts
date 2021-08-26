@@ -18,7 +18,7 @@ export const info = async (): Promise<void> => {
       showNotFound: true,
       duplicates: true,
       fullTree: true,
-    }
+    },
   )
 
   spiner.stop()
