@@ -31,7 +31,11 @@
     "cac": "^6.7.3",
     "chokidar": "^3.5.2",
     "envinfo": "^7.8.1",
-    "esbuild": "^0.12.22"
+    "esbuild": "^0.12.24",
+    "hosts-so-easy": "^1.2.9"
+  },
+  "devDependencies": {
+    "@types/envinfo": "^7.8.1"
   },
   "publishConfig": {
     "access": "public"

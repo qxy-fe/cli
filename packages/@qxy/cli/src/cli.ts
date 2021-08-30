@@ -1,6 +1,6 @@
 import { cac } from 'cac'
 import { chalk } from '@qxy/cli-utils'
-import { info } from './commands'
+import { info, host } from './commands'
 
 type $TODO = any
 
@@ -30,8 +30,13 @@ export const cli = (): void => {
 
   // register command
   program
-    .command('info', `Display environment infomation`)
+    .command(`info`, `Display environment infomation`)
     .action(wrapCommand(info))
+
+  program
+    .command(`host [region]`, `Manipulating /etc/hosts for dev`)
+    .option(`--delete`, `Delete the matched region if set`)
+    .action(wrapCommand(host))
 
   program.parse(process.argv)
 }
