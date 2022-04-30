@@ -5,4 +5,4 @@ export const hasDefaultExport = <T = any>(
 ): mod is { default: T } =>
   isPlainObject(mod) &&
   !!mod.__esmodule &&
-  Object.prototype.hasOwnProperty.call(mod, 'default')
+  Object.prototype.hasOwnProperty.call(mod, `default`)

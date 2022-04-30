@@ -26,8 +26,8 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@qxy/cli-shared": "0.0.1",
-    "@qxy/cli-utils": "0.0.1",
+    "@qxy/cli-shared": "workspace:*",
+    "@qxy/cli-utils": "workspace:*",
     "cac": "^6.7.3",
     "chokidar": "^3.5.2",
     "envinfo": "^7.8.1",

@@ -1,0 +1,3 @@
+packages:
+  - packages/qxy
+  - packages/@qxy/*

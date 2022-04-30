@@ -4,10 +4,11 @@
  * Return `null` if the module cannot be resolved
  * instead of throwing an error
  */
-export const requireResolve = (request: string): string | null => {
+export const requireResolve = (request: string) => {
   try {
     return require.resolve(request)
-  } catch {
+  }
+  catch {
     return null
   }
 }

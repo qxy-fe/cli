@@ -10,8 +10,8 @@ export const isRoot = (): boolean => process.getuid && process.getuid() === 0
 
 export const host = async (
   region: string,
-  commandOptions: CommandOptions = {}
-): Promise<void> => {
+  commandOptions: CommandOptions = {},
+) => {
   const spiner = ora()
   const hostsPrefixList = [
     `oa`,
@@ -34,7 +34,7 @@ export const host = async (
   spiner.start(
     `${
       commandOptions.delete ? `Deleting` : `Adding`
-    } hosts record for ${region}\n`
+    } hosts record for ${region}\n`,
   )
 
   hosts.on(`updateStart`, () => {

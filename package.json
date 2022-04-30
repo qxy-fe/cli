@@ -1,17 +1,16 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/qxy",
-    "packages/@qxy/*"
-  ],
   "scripts": {
     "build": "tsc --build",
-    "clean": "lerna run clean --stream",
-    "copy": "lerna run copy --stream",
-    "copy-watch": "lerna run copy --parallel -- --watch",
-    "dev": "yarn copy-watch & yarn build --watch",
-    "release": "yarn clean && yarn copy && yarn build && lerna publish",
-    "test": "jest --runInBand"
+    "build:watch": "tsc --build --watch",
+    "clean": "pnpm -r --stream run clean",
+    "copy": "pnpm -r run --stream --if-present copy",
+    "copy:watch": "pnpm -r --parallel --if-present run copy:watch",
+    "dev": "run-s copy:watch build:watch",
+    "release": "run-s clean copy build",
+    "test": "vitest --passWithNoTests",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "commitlint": {
     "extends": [
@@ -19,31 +18,34 @@
     ]
   },
   "lint-staged": {
-    "*.{json,yml,css,scss}": "prettier --write",
+    "*.{js,ts}": "eslint --fix",
+    "*.{json,md}": "prettier --write",
     "package.json": "sort-package-json"
   },
   "prettier": "@qxy/prettier-config",
-  "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@qxy/prettier-config": "^0.2.0",
-    "@types/jest": "^27.0.1",
-    "chokidar": "^3.5.2",
-    "cpx2": "^3.0.2",
-    "husky": "^7.0.2",
-    "jest": "^27.1.0",
-    "lerna": "^4.0.0",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
-    "rimraf": "^3.0.2",
-    "sort-package-json": "^1.50.0",
-    "ts-jest": "^27.0.5",
-    "typescript": "^4.4.2"
+  "eslintConfig": {
+    "extends": "@qxy/typescript",
+    "root": true
   },
-  "prettierIgnore": [
-    "node_modules",
-    "/dist",
-    "/static",
-    "*.min.*"
-  ]
+  "eslintIgnore": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@qxy/eslint-config-typescript": "^0.1.2",
+    "@qxy/prettier-config": "^0.3.1",
+    "chokidar": "^3.5.3",
+    "cpx2": "^4.2.0",
+    "eslint": "^8.14.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "npm-run-all": "^4.1.5",
+    "pnpm": "^6.32.11",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "sort-package-json": "^1.55.0",
+    "typescript": "^4.6.4",
+    "vitest": "^0.10.0"
+  }
 }

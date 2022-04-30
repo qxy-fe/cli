@@ -2,12 +2,12 @@
   "name": "qxy",
   "version": "0.0.1",
   "description": "> TODO: description",
+  "homepage": "",
+  "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
-  "homepage": "",
-  "license": "MIT",
   "main": "lib/cli.js",
   "types": "lib/index.d.ts",
   "bin": {
@@ -22,6 +22,6 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@qxy/cli": "0.0.1"
+    "@qxy/cli": "workspace:*"
   }
 }

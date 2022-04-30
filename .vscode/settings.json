@@ -1,3 +1,18 @@
 {
-  "cSpell.words": ["esbuild", "netoa", "qixinyun"]
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "cSpell.words": [
+    "esbuild",
+    "esmodule",
+    "netoa",
+    "pnpm",
+    "qixinyun",
+    "tsbuildinfo",
+    "upath",
+    "vitest"
+  ]
 }

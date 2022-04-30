@@ -18,7 +18,7 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@qxy/cli-shared": "0.0.1",
+    "@qxy/cli-shared": "workspace:*",
     "@types/debug": "^4.1.7",
     "@types/fs-extra": "^9.0.12",
     "chalk": "^4.1.2",

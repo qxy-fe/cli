@@ -3,6 +3,4 @@ export interface AppOptions<T, U> {
   userConfig: U
 }
 
-export type UserConfig<T extends {} = {}, U extends {} = {}> = Partial<
-  AppOptions<T, U>
->
+export type UserConfig<T extends {} = {}, U extends {} = {}> = Partial<AppOptions<T, U>>

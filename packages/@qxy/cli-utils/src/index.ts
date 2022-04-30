@@ -1,7 +1,7 @@
-import * as debug from 'debug'
-import * as chalk from 'chalk'
-import * as fs from 'fs-extra'
-import * as ora from 'ora'
+import debug from 'debug'
+import chalk from 'chalk'
+import fs from 'fs-extra'
+import ora from 'ora'
 import * as path from 'upath'
 
 export { debug, chalk, fs, ora, path }

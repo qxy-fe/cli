@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-const { cli } = require('../lib')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { cli } = require(`../lib`)
 
 cli()
