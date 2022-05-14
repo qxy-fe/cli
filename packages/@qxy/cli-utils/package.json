@@ -21,10 +21,10 @@
     "@qxy/cli-shared": "workspace:*",
     "@types/debug": "^4.1.7",
     "@types/fs-extra": "^9.0.12",
-    "chalk": "^4.1.2",
     "debug": "^4.3.2",
     "fs-extra": "^10.0.0",
     "ora": "5.4.1",
+    "picocolors": "^1.0.0",
     "upath": "^2.0.1"
   },
   "publishConfig": {

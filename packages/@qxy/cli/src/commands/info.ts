@@ -1,4 +1,4 @@
-import * as envinfo from 'envinfo'
+import envinfo from 'envinfo'
 import { ora } from '@qxy/cli-utils'
 
 export const info = async () => {
@@ -11,8 +11,9 @@ export const info = async () => {
       System: [`OS`, `CPU`, `Memory`, `Shell`],
       Binaries: [`Node`, `Yarn`, `npm`],
       Utilities: [`Git`],
+      IDEs: [`VSCode`],
       Browsers: [`Chrome`, `Edge`, `Firefox`, `Safari`],
-      npmPackages: [`qxy`, `@qxy/cli`, `@qxy/cli-utils`],
+      npmGlobalPackages: [`qxy`, `@qxy/cli`],
     },
     {
       showNotFound: true,

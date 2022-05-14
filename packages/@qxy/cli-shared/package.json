@@ -2,12 +2,12 @@
   "name": "@qxy/cli-shared",
   "version": "0.0.1",
   "description": "> TODO: description",
+  "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
   "homepage": "",
-  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [

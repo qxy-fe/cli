@@ -14,25 +14,27 @@
   },
   "main": "lib/cli.js",
   "types": "lib/index.d.ts",
-  "bin": {
-    "qxy": "bin/qxy.js"
-  },
   "files": [
     "bin",
     "lib"
   ],
+  "bin": {
+    "qxy": "bin/qxy.js"
+  },
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
+    "@jimp/core": "^0.16.1",
     "@qxy/cli-shared": "workspace:*",
     "@qxy/cli-utils": "workspace:*",
     "cac": "^6.7.3",
     "chokidar": "^3.5.2",
     "envinfo": "^7.8.1",
     "esbuild": "^0.12.24",
-    "hosts-so-easy": "^1.2.9"
+    "hosts-so-easy": "^1.2.9",
+    "jimp": "^0.16.1"
   },
   "devDependencies": {
     "@types/envinfo": "^7.8.1"

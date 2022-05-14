@@ -1,27 +1,28 @@
-import * as chalk from 'chalk'
-
-export const info = (...args: any[]): void => {
-  console.log(chalk.cyan(`info`), ...args)
-}
+import c from 'picocolors'
 
 export const tip = (...args: any[]): void => {
-  console.log(chalk.blue(`tip`), ...args)
+  console.log(c.blue(`tip`), ...args)
+}
+
+export const info = (...args: any[]): void => {
+  console.log(c.cyan(`info`), ...args)
 }
 
 export const success = (...args: any[]): void => {
-  console.log(chalk.green(`success`), ...args)
+  console.log(c.green(`success`), ...args)
 }
 
 export const warn = (...args: any[]): void => {
-  console.log(chalk.yellow(`warn`), ...args)
+  console.log(c.yellow(`warn`), ...args)
 }
+
 export const error = (...args: any[]): void => {
-  console.log(chalk.red(`error`), ...args)
+  console.log(c.red(`error`), ...args)
 }
 
 export const logger = {
-  info,
   tip,
+  info,
   success,
   warn,
   error,

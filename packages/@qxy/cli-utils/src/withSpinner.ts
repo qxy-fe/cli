@@ -12,8 +12,7 @@ export const withSpinner = (msg: string) => async <T>(target: () => Promise<T>) 
     const result = await target()
     spinner.succeed(`${msg}-done`)
     return result
-  }
-  catch (err) {
+  } catch (err) {
     spinner.fail(`${msg}-failed`)
     throw err
   }

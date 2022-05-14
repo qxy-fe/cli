@@ -1,10 +1,10 @@
 import debug from 'debug'
-import chalk from 'chalk'
+import c from 'picocolors'
 import fs from 'fs-extra'
 import ora from 'ora'
-import * as path from 'upath'
+import path from 'upath'
 
-export { debug, chalk, fs, ora, path }
+export { debug, c, fs, ora, path }
 
 export * from './logger'
 export * from './withSpinner'

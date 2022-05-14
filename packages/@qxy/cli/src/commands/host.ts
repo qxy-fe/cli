@@ -1,16 +1,13 @@
 import Hosts from 'hosts-so-easy'
-import { ora, logger } from '@qxy/cli-utils'
-
-export interface CommandOptions {
-  delete?: boolean
-}
+import { logger, ora } from '@qxy/cli-utils'
+import type { HostCommand } from './types'
 
 // https://github.com/sindresorhus/is-root
 export const isRoot = (): boolean => process.getuid && process.getuid() === 0
 
-export const host = async (
+export const host: HostCommand = async (
   region: string,
-  commandOptions: CommandOptions = {},
+  commandOptions = {},
 ) => {
   const spiner = ora()
   const hostsPrefixList = [
@@ -46,7 +43,7 @@ export const host = async (
     logger.success(`Done!`)
   })
 
-  hostsPrefixList.forEach(name => {
+  hostsPrefixList.forEach((name) => {
     commandOptions.delete
       ? hosts.remove(`*`, `${name}.${region}.com`)
       : hosts.add(`127.0.0.1`, `${name}.${region}.com`)

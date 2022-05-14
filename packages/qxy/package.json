@@ -10,13 +10,13 @@
   },
   "main": "lib/cli.js",
   "types": "lib/index.d.ts",
-  "bin": {
-    "qxy": "bin/qxy.js"
-  },
   "files": [
     "bin",
     "lib"
   ],
+  "bin": {
+    "qxy": "bin/qxy.js"
+  },
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo"

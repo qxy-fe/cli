@@ -7,8 +7,7 @@
 export const requireResolve = (request: string) => {
   try {
     return require.resolve(request)
-  }
-  catch {
+  } catch {
     return null
   }
 }
