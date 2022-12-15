@@ -1,11 +1,16 @@
 # qxy-cli
 
+[![CI](https://github.com/qxy-fe/qxy-cli/workflows/CI/badge.svg)](https://github.com/qxy-fe/qxy-cli/actions)
+[![NPM VERSION](https://img.shields.io/npm/v/qxy.svg)](https://www.npmjs.com/package/qxy)
+[![NPM DOWNLOADS](https://img.shields.io/npm/dy/qxy.svg)](https://www.npmjs.com/package/qxy)
+[![LICENSE](https://img.shields.io/github/license/qxy-fe/qxy-cli.svg)](https://github.com/qxy-fe/qxy-cli/blob/main/LICENSE)
+
 > Cli program of qxy
 
 ## Usage
 
 ```sh
-$ yarn global add @qxy
+$ yarn global add qxy
 
 $ qxy
 ```
