@@ -8,22 +8,30 @@
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "build": "tsc -b tsconfig.build.json",
-    "clean": "rimraf lib *.tsbuildinfo"
+    "dev": "DEV=1 tsup",
+    "build": "tsup"
   },
   "dependencies": {
     "@qxy/cli-shared": "workspace:*",
     "@types/debug": "^4.1.7",
-    "@types/fs-extra": "^9.0.12",
-    "debug": "^4.3.2",
-    "fs-extra": "^10.0.0",
-    "ora": "5.4.1",
+    "@types/fs-extra": "^9.0.13",
+    "debug": "^4.3.4",
+    "fs-extra": "^11.1.0",
+    "ora": "6.1.2",
     "picocolors": "^1.0.0",
     "upath": "^2.0.1"
   },

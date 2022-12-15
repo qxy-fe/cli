@@ -8,18 +8,12 @@
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
-  "main": "lib/cli.js",
-  "types": "lib/index.d.ts",
+  "main": "./bin/qxy.mjs",
   "files": [
-    "bin",
-    "lib"
+    "bin"
   ],
   "bin": {
-    "qxy": "bin/qxy.js"
-  },
-  "scripts": {
-    "build": "tsc -b tsconfig.build.json",
-    "clean": "rimraf lib *.tsbuildinfo"
+    "qxy": "./bin/qxy.mjs"
   },
   "dependencies": {
     "@qxy/cli": "workspace:*"

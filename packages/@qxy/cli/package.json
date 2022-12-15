@@ -12,32 +12,32 @@
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
-  "main": "lib/cli.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "bin",
-    "lib"
-  ],
-  "bin": {
-    "qxy": "bin/qxy.js"
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc -b tsconfig.build.json",
-    "clean": "rimraf lib *.tsbuildinfo"
+    "dev": "DEV=1 tsup",
+    "build": "tsup"
   },
   "dependencies": {
-    "@jimp/core": "^0.16.1",
+    "@jimp/core": "^0.16.2",
     "@qxy/cli-shared": "workspace:*",
     "@qxy/cli-utils": "workspace:*",
-    "cac": "^6.7.3",
-    "chokidar": "^3.5.2",
+    "@types/envinfo": "^7.8.1",
+    "cac": "^6.7.14",
     "envinfo": "^7.8.1",
-    "esbuild": "^0.12.24",
-    "hosts-so-easy": "^1.2.9",
-    "jimp": "^0.16.1"
-  },
-  "devDependencies": {
-    "@types/envinfo": "^7.8.1"
+    "esbuild": "^0.16.7",
+    "jimp": "^0.16.2"
   },
   "publishConfig": {
     "access": "public"

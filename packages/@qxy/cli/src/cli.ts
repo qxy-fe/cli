@@ -1,13 +1,13 @@
 import { cac } from 'cac'
 import { c } from '@qxy/cli-utils'
-import { host, icon, info } from './commands'
+import { icon, info } from './commands'
 
 /**
  * Wrap raw command to catch errors and exit process
  */
 const wrapCommand = (cmd: (...args: any[]) => Promise<void>): typeof cmd => {
   const wrappedCommand: typeof cmd = (...args) =>
-    cmd(...args).catch((err) => {
+    cmd(...args).catch(err => {
       console.error(c.red(err.stack))
       process.exit(1)
     })
@@ -36,12 +36,6 @@ export const cli = () => {
     .option(`-n, --name [name]`, `Icon name`)
     .option(`-d, --dest [dir]`, `Icon dest directory`)
     .action(wrapCommand(icon))
-
-  // register `host` command
-  program
-    .command(`host [region]`, `Manipulating /etc/hosts for dev`)
-    .option(`--delete`, `Delete the matched region if set`)
-    .action(wrapCommand(host))
 
   // register `info` command
   program

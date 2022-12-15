@@ -1,18 +1,11 @@
 {
-  "extends": "./tsconfig.base.json",
+  "files": [],
   "references": [
     {
-      "path": "./packages/@qxy/cli/tsconfig.build.json"
+      "path": "./tsconfig.lib.json"
     },
     {
-      "path": "./packages/@qxy/cli-shared/tsconfig.build.json"
-    },
-    {
-      "path": "./packages/@qxy/cli-utils/tsconfig.build.json"
-    },
-    {
-      "path": "./packages/qxy/tsconfig.build.json"
+      "path": "./tsconfig.test.json"
     }
-  ],
-  "files": []
+  ]
 }

@@ -1,4 +1,16 @@
 {
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "json5"
+  ],
   "[javascript]": {
     "editor.formatOnSave": false
   },
@@ -7,12 +19,14 @@
   },
   "cSpell.words": [
     "bumpp",
+    "changelogithub",
     "esbuild",
     "esmodule",
     "netoa",
     "pnpm",
     "qixinyun",
     "tsbuildinfo",
+    "tsup",
     "upath",
     "vitest"
   ]
