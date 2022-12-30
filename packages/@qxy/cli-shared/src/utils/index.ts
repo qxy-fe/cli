@@ -1,1 +1,1 @@
-export * from './isPlainObject'
+export * from './isPlainObject.js'

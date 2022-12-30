@@ -1,6 +1,6 @@
 import { cac } from 'cac'
 import { c } from '@qxy/cli-utils'
-import { icon, info } from './commands'
+import { icon, info } from './commands/index.js'
 
 /**
  * Wrap raw command to catch errors and exit process

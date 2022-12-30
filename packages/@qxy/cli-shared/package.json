@@ -1,5 +1,6 @@
 {
   "name": "@qxy/cli-shared",
+  "type": "module",
   "version": "0.1.0",
   "description": "> TODO: description",
   "license": "MIT",
@@ -9,21 +10,18 @@
   },
   "homepage": "",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
+    ".": "./dist/index.js",
     "./*": "./*"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "DEV=1 tsup",
-    "build": "tsup"
+    "build": "tsup",
+    "dev": "DEV=1 tsup"
   },
   "publishConfig": {
     "access": "public"

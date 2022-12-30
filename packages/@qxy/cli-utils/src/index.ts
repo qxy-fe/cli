@@ -6,7 +6,7 @@ import path from 'upath'
 
 export { debug, c, fs, ora, path }
 
-export * from './logger'
-export * from './withSpinner'
-export * from './requireResolve'
-export * from './hasDefaultExport'
+export * from './logger.js'
+export * from './withSpinner.js'
+export * from './requireResolve.js'
+export * from './hasDefaultExport.js'

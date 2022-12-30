@@ -9,7 +9,7 @@ export default defineConfig({
 
   splitting: true,
 
-  format: [`esm`, `cjs`],
+  format: [`esm`],
 
   target: `node14`,
 

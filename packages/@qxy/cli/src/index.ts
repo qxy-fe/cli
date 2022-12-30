@@ -1,3 +1,3 @@
-export * from './cli'
-export * from './config'
-export * from './commands'
+export * from './cli.js'
+export * from './config/index.js'
+export * from './commands/index.js'

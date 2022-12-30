@@ -1,5 +1,6 @@
 {
   "name": "@qxy/cli",
+  "type": "module",
   "version": "0.1.0",
   "description": "> TODO: description",
   "keywords": [
@@ -13,21 +14,18 @@
     "email": "ntnyq13@gmail.com"
   },
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
+    ".": "./dist/index.js",
     "./*": "./*"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "DEV=1 tsup",
-    "build": "tsup"
+    "build": "tsup",
+    "dev": "DEV=1 tsup"
   },
   "dependencies": {
     "@jimp/core": "^0.16.2",
@@ -36,7 +34,7 @@
     "@types/envinfo": "^7.8.1",
     "cac": "^6.7.14",
     "envinfo": "^7.8.1",
-    "esbuild": "^0.16.7",
+    "esbuild": "^0.16.12",
     "jimp": "^0.16.2"
   },
   "publishConfig": {

@@ -1,4 +1,4 @@
-import { type UserConfig } from './types'
+import { type UserConfig } from './types.js'
 
 export const defineUserConfig = <T extends {} = {}, U extends {} = {}>(
   config: UserConfig<T, U>,

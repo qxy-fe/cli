@@ -1,6 +1,9 @@
 import Jimp from 'jimp'
 import { fs, logger, ora, path } from '@qxy/cli-utils'
-import type { IconCommand, IconCommandOptions } from './types'
+import type {
+  IconCommand,
+  IconCommandOptions,
+} from './types.js'
 
 const root = process.cwd()
 
