@@ -4,9 +4,6 @@ node_modules
 *.log*
 dist
 
-# dist
-lib/
-
 # Test coverage
 coverage/
 

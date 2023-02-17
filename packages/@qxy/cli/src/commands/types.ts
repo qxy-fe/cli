@@ -6,7 +6,7 @@ export type IconCommand = (icon: string, commandOptions?: IconCommandOptions) =>
 /**
  * CLI options of `icon` command
  */
-export interface IconCommandOptions{
+export interface IconCommandOptions {
   sizes?: string
   name?: string
   dest?: string
@@ -20,6 +20,6 @@ export type HostCommand = (region: string, commandOptions?: HostCommandOptions) 
 /**
  * CLI options of `host` command
  */
-export interface HostCommandOptions{
+export interface HostCommandOptions {
   delete?: boolean
 }

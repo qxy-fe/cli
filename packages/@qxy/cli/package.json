@@ -7,12 +7,12 @@
     "qxy",
     "cli"
   ],
-  "homepage": "",
   "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
+  "homepage": "",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -28,14 +28,14 @@
     "dev": "DEV=1 tsup"
   },
   "dependencies": {
-    "@jimp/core": "^0.16.2",
+    "@jimp/core": "^0.22.4",
     "@qxy/cli-shared": "workspace:*",
     "@qxy/cli-utils": "workspace:*",
     "@types/envinfo": "^7.8.1",
     "cac": "^6.7.14",
     "envinfo": "^7.8.1",
-    "esbuild": "^0.16.12",
-    "jimp": "^0.16.2"
+    "esbuild": "^0.17.8",
+    "jimp": "^0.22.4"
   },
   "publishConfig": {
     "access": "public"

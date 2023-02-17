@@ -2,12 +2,12 @@
   "name": "qxy",
   "version": "0.1.0",
   "description": "> TODO: description",
-  "homepage": "",
   "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
+  "homepage": "",
   "main": "./bin/qxy.mjs",
   "files": [
     "bin"

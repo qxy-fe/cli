@@ -19,11 +19,11 @@ const wrapCommand = (cmd: (...args: any[]) => Promise<void>): typeof cmd => {
  */
 export const cli = () => {
   // create cac instance
-  const program = cac(`qxy`)
+  const program = cac('qxy')
 
   // display cli version
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const versionCli = require(`../package.json`).version
+  const versionCli = require('../package.json').version
   program.version(`cli@${versionCli}`)
 
   // display help message
@@ -31,15 +31,15 @@ export const cli = () => {
 
   // register `icon` command
   program
-    .command(`icon [icon]`, `Generate different sizes icon files`)
-    .option(`-s, --sizes [sizes]`, `Icon sizes, separated by comma`)
-    .option(`-n, --name [name]`, `Icon name`)
-    .option(`-d, --dest [dir]`, `Icon dest directory`)
+    .command('icon [icon]', 'Generate different sizes icon files')
+    .option('-s, --sizes [sizes]', 'Icon sizes, separated by comma')
+    .option('-n, --name [name]', 'Icon name')
+    .option('-d, --dest [dir]', 'Icon dest directory')
     .action(wrapCommand(icon))
 
   // register `info` command
   program
-    .command(`info`, `Display environment infomation`)
+    .command('info', 'Display environment infomation')
     .action(wrapCommand(info))
 
   program.parse(process.argv)

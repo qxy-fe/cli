@@ -16,17 +16,17 @@ export interface IconOption {
 
 export const resolveIconOptions = (options: IconCommandOptions) => {
   const defaultOptions = {
-    name: `icon`,
-    dest: `icon-dist`,
+    name: 'icon',
+    dest: 'icon-dist',
     sizes: [16, 32, 48, 64, 96, 100, 128, 196, 200, 256, 512, 1024],
   }
-  const sizes = options.sizes?.split(`,`)
+  const sizes = options.sizes?.split(',')
     .map(size => Number(size.trim()))
     .filter(size => !Number.isNaN(size)) ?? defaultOptions.sizes
   return { ...defaultOptions, ...options, sizes }
 }
 
-export async function genIcon (icon: IconOption) {
+export async function genIcon(icon: IconOption) {
   const ext = path.extname(icon.file)
   const jimpIcon = await Jimp.read(icon.file)
   const destPath = path.isAbsolute(icon.dest) ? icon.dest : path.resolve(root, icon.dest)
@@ -41,8 +41,8 @@ export const icon: IconCommand = async (icon, commandOptions = {}) => {
   }
   const { name, dest, sizes = [] } = resolveIconOptions(commandOptions)
   const spiner = ora()
-  spiner.start(`Generating icons`)
+  spiner.start('Generating icons')
   await Promise.all(sizes.map(size => genIcon({ file: icon, name, dest, size })))
   spiner.stop()
-  logger.success(`Generated icons done`)
+  logger.success('Generated icons done')
 }
