@@ -3,8 +3,10 @@
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@7.30.5",
-  "description": "",
-  "keywords": [],
+  "description": "qxy cli",
+  "keywords": [
+    "cli"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/qxy-fe/cli#readme",
   "bugs": {
