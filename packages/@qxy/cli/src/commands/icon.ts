@@ -1,9 +1,6 @@
 import Jimp from 'jimp'
 import { fs, logger, ora, path } from '@qxy/cli-utils'
-import type {
-  IconCommand,
-  IconCommandOptions,
-} from './types.js'
+import type { IconCommand, IconCommandOptions } from './types.js'
 
 const root = process.cwd()
 
@@ -20,9 +17,11 @@ export const resolveIconOptions = (options: IconCommandOptions) => {
     dest: 'icon-dist',
     sizes: [16, 32, 48, 64, 96, 100, 128, 196, 200, 256, 512, 1024],
   }
-  const sizes = options.sizes?.split(',')
-    .map(size => Number(size.trim()))
-    .filter(size => !Number.isNaN(size)) ?? defaultOptions.sizes
+  const sizes =
+    options.sizes
+      ?.split(',')
+      .map(size => Number(size.trim()))
+      .filter(size => !Number.isNaN(size)) ?? defaultOptions.sizes
   return { ...defaultOptions, ...options, sizes }
 }
 

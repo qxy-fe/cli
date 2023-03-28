@@ -9,8 +9,18 @@
 
 ## Usage
 
-```sh
-$ yarn global add qxy
-
-$ qxy
+```bash
+npm i -g qxy
 ```
+
+```bash
+yarn global add qxy
+```
+
+```bash
+pnpm add --global qxy
+```
+
+## License
+
+[MIT](./LICENSE) License © 2022 to PRESENT [qxy-fe](https://github.com/qxy-fe)

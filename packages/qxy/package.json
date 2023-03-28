@@ -9,12 +9,12 @@
   },
   "homepage": "",
   "main": "./bin/qxy.mjs",
-  "files": [
-    "bin"
-  ],
   "bin": {
     "qxy": "./bin/qxy.mjs"
   },
+  "files": [
+    "bin"
+  ],
   "dependencies": {
     "@qxy/cli": "workspace:*"
   }

@@ -38,9 +38,7 @@ export const cli = () => {
     .action(wrapCommand(icon))
 
   // register `info` command
-  program
-    .command('info', 'Display environment infomation')
-    .action(wrapCommand(info))
+  program.command('info', 'Display environment infomation').action(wrapCommand(info))
 
   program.parse(process.argv)
 }
