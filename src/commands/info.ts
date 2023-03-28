@@ -1,10 +1,11 @@
 import envinfo from 'envinfo'
-import { ora } from '@qxy/cli-utils'
+import ora from 'ora'
+import consola from 'consola'
 
-export const info = async () => {
+export async function info() {
   const spiner = ora()
 
-  spiner.start('Collecting Environment Info')
+  spiner.start('Collecting environment info...')
 
   const result = await envinfo.run(
     {
@@ -13,7 +14,7 @@ export const info = async () => {
       Utilities: ['Git'],
       IDEs: ['VSCode'],
       Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-      npmGlobalPackages: ['qxy', '@qxy/cli'],
+      npmGlobalPackages: ['qxy'],
     },
     {
       showNotFound: true,
@@ -24,5 +25,5 @@ export const info = async () => {
 
   spiner.stop()
 
-  console.info(result)
+  consola.info(result)
 }

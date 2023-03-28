@@ -1,18 +1,48 @@
 {
+  "name": "qxy",
+  "type": "module",
   "version": "0.1.0",
-  "private": true,
   "packageManager": "pnpm@7.30.5",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "https://github.com/qxy-fe/cli#readme",
+  "bugs": {
+    "url": "https://github.com/qxy-fe/cli/issues"
+  },
+  "repository": "qxy-fe/cli",
+  "exports": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "qxy": "./bin/qxy.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
   "scripts": {
-    "build": "pnpm -r --stream run build",
-    "dev": "pnpm -r --parallel run dev",
+    "build": "tsup",
+    "dev": "tsup watch src",
     "lint": "eslint .",
     "prepare": "husky install",
     "release": "run-s release:check release:version release:publish",
-    "release:check": "run-s lint typecheck clean build",
-    "release:publish": "pnpm -r publish",
-    "release:version": "bumpp -r",
+    "release:check": "run-s clean lint build typecheck",
+    "release:publish": "pnpm publish",
+    "release:version": "bumpp",
     "test": "vitest --passWithNoTests",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@jimp/core": "^0.22.7",
+    "@types/envinfo": "^7.8.1",
+    "cac": "^6.7.14",
+    "consola": "^2.15.3",
+    "envinfo": "^7.8.1",
+    "fast-glob": "^3.2.12",
+    "jimp": "^0.22.7",
+    "ora": "^6.3.0"
   },
   "devDependencies": {
     "@ntnyq/eslint-config": "^1.6.1",
@@ -27,8 +57,12 @@
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "tsup": "^6.7.0",
+    "tsx": "^3.12.6",
     "typescript": "^5.0.2",
     "vitest": "^0.29.7"
+  },
+  "engines": {
+    "node": ">=14.19.0"
   },
   "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
