@@ -1,3 +1,4 @@
+import process from 'node:process'
 import consola from 'consola'
 
 export function wrapCommand(cmd: (...args: any[]) => Promise<void>): typeof cmd {
