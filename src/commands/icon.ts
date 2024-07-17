@@ -7,14 +7,18 @@ import { oraPromise } from 'ora'
 
 export interface IconCommandOptions {
   sizes?: string
-  name?: string
   dest?: string
+  name?: string
+  prefix?: string
+  suffix?: string
 }
 
 export interface IconOptions {
   file: string
   dest: string
   name: string
+  prefix: string
+  suffix: string
   size: number
   cwd?: string
 }
@@ -25,6 +29,8 @@ export function resolveIconOptions(options: IconCommandOptions) {
   const defaultOptions = {
     name: 'icon',
     dest: 'icon-dist',
+    prefix: '',
+    suffix: '',
     sizes: [16, 32, 48, 64, 96, 100, 128, 196, 200, 256, 512, 1024],
   }
   const sizes =
@@ -35,11 +41,19 @@ export function resolveIconOptions(options: IconCommandOptions) {
   return { ...defaultOptions, ...options, sizes }
 }
 
-export async function genIcon({ file, dest, name, size, cwd = process.cwd() }: IconOptions) {
+export async function genIcon({
+  file,
+  dest,
+  name,
+  prefix,
+  suffix,
+  size,
+  cwd = process.cwd(),
+}: IconOptions) {
   const ext = extname(file)
   const jimpIcon = await Jimp.read(file)
   const destPath = isAbsolute(dest) ? dest : resolve(cwd, dest)
-  const iconName = `${name}_${size}${ext}`
+  const iconName = [prefix, name, suffix, size, ext].filter(Boolean).join('')
   jimpIcon.resize(size, Jimp.AUTO).write(`${destPath}/${iconName}`)
 }
 
@@ -48,9 +62,11 @@ export const icon: IconCommand = async (icon, commandOptions) => {
     consola.error(`Icon file not found: ${icon}`)
     process.exit(1)
   }
-  const { name, dest, sizes = [] } = resolveIconOptions(commandOptions)
+  const { name, prefix, suffix, dest, sizes = [] } = resolveIconOptions(commandOptions)
 
-  const pAll = Promise.all(sizes.map(size => genIcon({ file: icon, name, dest, size })))
+  const pAll = Promise.all(
+    sizes.map(size => genIcon({ file: icon, name, prefix, suffix, dest, size })),
+  )
 
   await oraPromise(pAll, 'Generating icons...')
 
