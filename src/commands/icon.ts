@@ -51,7 +51,7 @@ export async function genIcon({
   const ext = extname(file)
   const jimpIcon = await Jimp.read(file)
   const destPath = isAbsolute(dest) ? dest : resolve(cwd, dest)
-  const iconName = [prefix, name, suffix, size, ext].filter(Boolean).join('')
+  const iconName = [prefix, name, size, suffix, ext].filter(Boolean).join('')
   jimpIcon.resize(size, Jimp.AUTO).write(`${destPath}/${iconName}`)
 }
 
