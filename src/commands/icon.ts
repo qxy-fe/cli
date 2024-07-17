@@ -13,21 +13,19 @@ export interface IconCommandOptions {
   suffix?: string
 }
 
-export interface IconOptions {
+export type GenerateIconOptions = Required<
+  Pick<IconCommandOptions, 'dest' | 'name' | 'prefix' | 'suffix'>
+> & {
   file: string
-  dest: string
-  name: string
-  prefix: string
-  suffix: string
   size: number
   cwd?: string
 }
 
 export type IconCommand = (icon: string, commandOptions: IconCommandOptions) => Promise<void>
 
-export function resolveIconOptions(options: IconCommandOptions) {
+export function resolveIconCommandOptions(options: IconCommandOptions) {
   const defaultOptions = {
-    name: 'icon',
+    name: '',
     dest: 'icon-dist',
     prefix: '',
     suffix: '',
@@ -49,7 +47,7 @@ export async function genIcon({
   suffix,
   size,
   cwd = process.cwd(),
-}: IconOptions) {
+}: GenerateIconOptions) {
   const ext = extname(file)
   const jimpIcon = await Jimp.read(file)
   const destPath = isAbsolute(dest) ? dest : resolve(cwd, dest)
@@ -62,7 +60,7 @@ export const icon: IconCommand = async (icon, commandOptions) => {
     consola.error(`Icon file not found: ${icon}`)
     process.exit(1)
   }
-  const { name, prefix, suffix, dest, sizes = [] } = resolveIconOptions(commandOptions)
+  const { name, prefix, suffix, dest, sizes = [] } = resolveIconCommandOptions(commandOptions)
 
   const pAll = Promise.all(
     sizes.map(size => genIcon({ file: icon, name, prefix, suffix, dest, size })),
