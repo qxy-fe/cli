@@ -1,7 +1,7 @@
 import { cac } from 'cac'
 import pkg from '../package.json'
-import { wrapCommand } from './utils'
 import { icon, info } from './commands'
+import { wrapCommand } from './utils'
 
 // create cac instance
 const cli = cac('qxy')

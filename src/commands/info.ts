@@ -1,6 +1,6 @@
+import consola from 'consola'
 import envinfo from 'envinfo'
 import ora from 'ora'
-import consola from 'consola'
 
 export async function info() {
   const spiner = ora()

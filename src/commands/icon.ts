@@ -1,8 +1,8 @@
-import { extname, isAbsolute, resolve } from 'node:path'
+import { existsSync } from 'node:fs'
+import { isAbsolute, resolve } from 'node:path'
 import process from 'node:process'
-import Jimp from 'jimp'
 import consola from 'consola'
-import fs from 'fs-extra'
+import { Jimp } from 'jimp'
 import { oraPromise } from 'ora'
 
 export interface IconCommandOptions {
@@ -48,15 +48,23 @@ export async function genIcon({
   size,
   cwd = process.cwd(),
 }: GenerateIconOptions) {
-  const ext = extname(file)
+  const ext = file.split('.').pop()!
   const jimpIcon = await Jimp.read(file)
   const destPath = isAbsolute(dest) ? dest : resolve(cwd, dest)
-  const iconName = [prefix, name, size, suffix, ext].filter(Boolean).join('')
-  jimpIcon.resize(size, Jimp.AUTO).write(`${destPath}/${iconName}`)
+  const iconName = [prefix, name, size, suffix].filter(Boolean).join('')
+
+  const outputPath = `${destPath}/${iconName}`
+
+  jimpIcon
+    .resize({
+      w: size,
+      h: size,
+    })
+    .write(`${outputPath}.${ext}`)
 }
 
 export const icon: IconCommand = async (icon, commandOptions) => {
-  if (!fs.existsSync(icon)) {
+  if (!existsSync(icon)) {
     consola.error(`Icon file not found: ${icon}`)
     process.exit(1)
   }

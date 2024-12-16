@@ -2,17 +2,17 @@
   "name": "qxy",
   "type": "module",
   "version": "0.3.2",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.15.0",
   "description": "qxy cli",
   "keywords": [
     "cli"
   ],
   "license": "MIT",
   "homepage": "https://github.com/qxy-fe/cli#readme",
+  "repository": "qxy-fe/cli",
   "bugs": {
     "url": "https://github.com/qxy-fe/cli/issues"
   },
-  "repository": "qxy-fe/cli",
   "exports": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -37,37 +37,31 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@jimp/core": "^0.22.12",
     "@types/envinfo": "^7.8.4",
-    "@types/fs-extra": "^11.0.4",
     "cac": "^6.7.14",
     "consola": "^3.2.3",
-    "envinfo": "^7.13.0",
-    "fast-glob": "^3.3.2",
-    "fs-extra": "^11.2.0",
-    "jimp": "^0.22.12",
-    "ora": "^8.0.1"
+    "envinfo": "^7.14.0",
+    "jimp": "^1.6.0",
+    "ora": "^8.1.1"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^2.6.1",
-    "@ntnyq/prettier-config": "^1.21.2",
-    "@types/node": "^20.14.11",
-    "bumpp": "^9.4.1",
-    "eslint": "^9.7.0",
-    "husky": "^9.1.0",
+    "@ntnyq/eslint-config": "^3.9.2",
+    "@ntnyq/prettier-config": "^1.22.0",
+    "@types/node": "^22.10.2",
+    "bumpp": "^9.9.1",
+    "eslint": "^9.17.0",
+    "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
-    "npm-run-all2": "^6.2.2",
-    "pnpm": "^9.5.0",
-    "prettier": "^3.3.3",
-    "tsup": "^8.1.2",
-    "tsx": "^4.16.2",
-    "typescript": "^5.5.3",
-    "vitest": "^2.0.3"
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=18.18.0"
   },
-  "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
     "*.{js,ts,cjs,mjs,yml,yaml,json,md}": "eslint --fix"
   }
