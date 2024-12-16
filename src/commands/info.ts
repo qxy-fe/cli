@@ -10,7 +10,7 @@ export async function info() {
   const result = await envinfo.run(
     {
       System: ['OS', 'CPU', 'Memory', 'Shell'],
-      Binaries: ['Node', 'Yarn', 'npm'],
+      Binaries: ['Node', 'Yarn', 'npm', 'pnpm', 'bun'],
       Utilities: ['Git'],
       IDEs: ['VSCode'],
       Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
