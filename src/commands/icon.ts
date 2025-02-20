@@ -3,7 +3,9 @@ import { isAbsolute, resolve } from 'node:path'
 import process from 'node:process'
 import consola from 'consola'
 import { Jimp } from 'jimp'
-import { oraPromise } from 'ora'
+
+import { createSpinner } from 'nanospinner'
+import { fsEnsureDir } from '../utils'
 
 export interface IconCommandOptions {
   sizes?: string
@@ -21,7 +23,10 @@ export type GenerateIconOptions = Required<
   cwd?: string
 }
 
-export type IconCommand = (icon: string, commandOptions: IconCommandOptions) => Promise<void>
+export type IconCommand = (
+  icon: string,
+  commandOptions: IconCommandOptions,
+) => Promise<void>
 
 export function resolveIconCommandOptions(options: IconCommandOptions) {
   const defaultOptions = {
@@ -53,14 +58,14 @@ export async function genIcon({
   const destPath = isAbsolute(dest) ? dest : resolve(cwd, dest)
   const iconName = [prefix, name, size, suffix].filter(Boolean).join('')
 
-  const outputPath = `${destPath}/${iconName}`
+  await fsEnsureDir(destPath)
 
   jimpIcon
     .resize({
       w: size,
       h: size,
     })
-    .write(`${outputPath}.${ext}`)
+    .write(`${destPath}/${iconName}.${ext}`)
 }
 
 export const icon: IconCommand = async (icon, commandOptions) => {
@@ -68,13 +73,27 @@ export const icon: IconCommand = async (icon, commandOptions) => {
     consola.error(`Icon file not found: ${icon}`)
     process.exit(1)
   }
-  const { name, prefix, suffix, dest, sizes = [] } = resolveIconCommandOptions(commandOptions)
+  const {
+    name,
+    prefix,
+    suffix,
+    dest,
+    sizes = [],
+  } = resolveIconCommandOptions(commandOptions)
 
-  const pAll = Promise.all(
-    sizes.map(size => genIcon({ file: icon, name, prefix, suffix, dest, size })),
-  )
+  const spinner = createSpinner('Generating icons...')
 
-  await oraPromise(pAll, 'Generating icons...')
+  try {
+    await Promise.all(
+      sizes.map(size =>
+        genIcon({ file: icon, name, prefix, suffix, dest, size }),
+      ),
+    )
+    spinner.success('Generating icons successful!')
+  } catch (err) {
+    consola.error(err)
+    spinner.error('Generating icons failed!')
+  }
 
   consola.success('Generated icons done')
 }

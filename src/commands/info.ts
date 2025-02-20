@@ -1,9 +1,9 @@
 import consola from 'consola'
 import envinfo from 'envinfo'
-import ora from 'ora'
+import { createSpinner } from 'nanospinner'
 
 export async function info() {
-  const spiner = ora()
+  const spiner = createSpinner()
 
   spiner.start('Collecting environment info...')
 
